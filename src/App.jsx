@@ -3,7 +3,23 @@ import CarList from "./components/CarList";
 import Filter from "./components/Filter";
 
 function App() {
-  const [count, setCount] = useState(0);
+
+  const getCars = () => {
+    const url = "https://exam.razoyo.com/api/cars"
+
+    return fetch(url)
+    .then(response => {
+      if(response.ok) {
+        return response.json
+      } else {
+        throw new Error('Response error');
+      }
+    })
+    .then( data => {
+      console.log(data)
+      return data 
+    })
+  }
 
   return (
     <>
