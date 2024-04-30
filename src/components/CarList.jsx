@@ -1,6 +1,10 @@
+import Car from "./Car";
+
 const CarList = () => {
   return (
-    <div>CarList</div>
+    <>
+        <Car/>
+    </>
   )
 }
 
