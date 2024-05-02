@@ -4,22 +4,26 @@ import Filter from "./components/Filter";
 
 function App() {
 
-  const getCars = () => {
-    const url = "https://exam.razoyo.com/api/cars"
+  useEffect(() => {
+    const fetchCars = async () => {
+      const url = "https://exam.razoyo.com/api/cars";
 
-    return fetch(url)
-    .then(response => {
-      if(response.ok) {
-        return response.json
-      } else {
-        throw new Error('Response error');
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
       }
-    })
-    .then( data => {
-      console.log(data)
-      return data 
-    })
-  }
+    };
+
+    fetchCars();
+  }, []);
 
   return (
     <>
