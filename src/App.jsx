@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CarList from "./components/CarList";
 import Filter from "./components/Filter";
 
