@@ -3,6 +3,9 @@ import CarList from "./components/CarList";
 import Filter from "./components/Filter";
 
 function App() {
+  const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCars = async () => {
