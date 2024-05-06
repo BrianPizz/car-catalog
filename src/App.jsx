@@ -30,10 +30,19 @@ function App() {
 
   return (
     <>
-      <Filter />
-      <CarList cars={cars}/>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error.message}</p>
+      ) : (
+        <>
+        <Filter />
+        <CarList cars={cars} />
+        </>
+      )}
     </>
   );
+  
 }
 
 export default App;
