@@ -1,11 +1,13 @@
 import Car from "./Car";
 
-const CarList = () => {
+const CarList = ({ cars }) => {
   return (
     <>
-        <Car/>
+      {cars.map((car, index) => (
+        <Car key={index} car={car} />
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default CarList
+export default CarList;
