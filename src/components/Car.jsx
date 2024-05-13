@@ -1,7 +1,10 @@
-const Car = () => {
-    return (
-      <div>Car</div>
-    )
-  }
-  
-  export default Car
+const Car = ({ make, model, year }) => {
+  return (
+    <div>
+      <h2>make model</h2>
+      <p>Year: year</p>
+    </div>
+  );
+};
+
+export default Car;
