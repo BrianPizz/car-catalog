@@ -1,4 +1,4 @@
-const Car = ({ make, model, year }) => {
+const Car = () => {
   return (
     <div>
       <h2>make model</h2>
