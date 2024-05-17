@@ -1,8 +1,8 @@
-const Car = () => {
+const Car = ({ car }) => {
   return (
     <div>
-      <h2>make model</h2>
-      <p>Year: year</p>
+      <h2>{car.make} {car.model}</h2>
+      <p>Year: {car.year}</p>
     </div>
   );
 };
