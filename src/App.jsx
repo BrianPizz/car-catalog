@@ -17,7 +17,8 @@ function App() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setCars(data);
+        setCars(data.cars);
+        console.log(data);
       } catch (error) {
         setError(error);
       } finally {
@@ -36,13 +37,11 @@ function App() {
         <p>Error: {error.message}</p>
       ) : (
         <>
-        <Filter />
-        <CarList cars={cars} />
+          <Filter />
         </>
       )}
     </>
   );
-  
 }
 
 export default App;
