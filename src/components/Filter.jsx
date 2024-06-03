@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Filter = ({ onChange }) => {
-  const [selectedMake, setSelectedMake] = useState('');
+  const [selectedMake, setSelectedMake] = useState("");
 
   const handleSelectChange = (event) => {
     setSelectedMake(event.target.value);
@@ -16,7 +16,6 @@ const Filter = ({ onChange }) => {
         <option value="Toyota">Toyota</option>
         <option value="Honda">Honda</option>
         <option value="Ford">Ford</option>
-        {/* Add more options for other car makes */}
       </select>
     </div>
   );
